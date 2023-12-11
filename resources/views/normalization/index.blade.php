@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.template')
 @section('content')
 <div class="content-wrapper">
     <div class="content-header">
@@ -78,4 +78,20 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    $('#mytable').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+    });
+});
+</script>
 @endsection
