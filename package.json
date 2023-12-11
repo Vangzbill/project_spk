@@ -14,8 +14,11 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+<<<<<<< HEAD
     },
     "dependencies": {
         "bootstrap-icons": "^1.11.2"
+=======
+>>>>>>> ce4eac2156c2f4ace1c87433479327a2393e7e37
     }
 }
