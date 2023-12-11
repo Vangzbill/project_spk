@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="content">
+    <div class="content" style="margin-left: 15px">
         <div class="breadcome-area">
             <div class="container-fluid">
                 <div class="row">

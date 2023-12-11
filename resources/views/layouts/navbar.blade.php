@@ -16,7 +16,7 @@
                         <div class="header-top-wraper">
                             <div class="row">
                                 <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                                    <div class="menu-switcher-pro">
+                                    <div class="menu-switcher-pro" style="margin-left: 10px">
                                         <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
                                                 <i class="icon nalika-menu-task"></i>
                                             </button>

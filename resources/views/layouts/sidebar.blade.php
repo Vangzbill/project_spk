@@ -2,7 +2,7 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-            <strong><img src="https://www.hpi.or.id/wp-content/uploads/2021/08/Logo-Polinema.png" alt="" /></strong>
+            <strong><img src="img/poltek.png" alt="" /></strong>
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
@@ -14,25 +14,25 @@
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
                     <li>
-                        <a class="mailbox" href="{{ url('/') }}" aria-expanded="false"><i class="icon nalika-home icon-wrap"></i> <span class="mini-click-non">Dashboard</span></a>
+                        <a class="mailbox" href="{{ url('/') }}" aria-expanded="false"><i class="icon nalika-home icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Dashboard</span></a>
                     </li>
                     <li>
-                        <a class="kriteria" href="{{ url('kriteria_dan_bobot') }}" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non">Kriteria & Bobot</span></a>
+                        <a class="kriteria" href="{{ url('kriteria_dan_bobot') }}" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Kriteria & Bobot</span></a>
                     </li>
                     <li>
-                        <a class="alt" href="{{ url('alternatif') }}" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Alternatif & Penilaian</span></a>
+                        <a class="alt" href="{{ url('alternatif') }}" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Alternatif & Penilaian</span></a>
                     </li>
                     <li>
-                        <a class="matriks" href="{{ url('decision_matrix') }}" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Matriks Keputusan</span></a>
+                        <a class="matriks" href="{{ url('decision_matrix') }}" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Matriks Keputusan</span></a>
                     </li>
                     <li>
-                        <a class="normalisasi" href="{{ url('normalisasi_dan_optimalisasi') }}" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non">Normalisasi & Optimalisasi</span></a>
+                        <a class="normalisasi" href="{{ url('normalisasi_dan_optimalisasi') }}" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Normalisasi & Optimalisasi</span></a>
                     </li>
                     <li>
-                        <a class="value" href="{{ url('value') }}" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Value</span></a>
+                        <a class="value" href="{{ url('value') }}" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Value</span></a>
                     </li>
                     <li>
-                        <a class="rank" href="{{ url('rank') }}" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non">Ranking</span></a>
+                        <a class="rank" href="{{ url('rank') }}" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Ranking</span></a>
                     </li>
                 </ul>
             </nav>
