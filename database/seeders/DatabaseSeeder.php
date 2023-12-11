@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AlternatifSeeder::class,
             KriteriadanBobotSeeder::class
-        ]);        // \App\Models\User::factory(10)->create();
+        ]);
+        // \App\Models\User::factory(10)->create();
     }
 }
