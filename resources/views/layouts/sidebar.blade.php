@@ -23,7 +23,7 @@
                         <a class="alt" href="{{ url('alternatif') }}" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Alternatif & Penilaian</span></a>
                     </li>
                     <li>
-                        <a class="matriks" href="{{ url('matriks_keputusan') }}" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Matriks Keputusan</span></a>
+                        <a class="matriks" href="{{ url('decision_matrix') }}" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Matriks Keputusan</span></a>
                     </li>
                     <li>
                         <a class="normalisasi" href="{{ url('normalisasi_dan_optimalisasi') }}" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non">Normalisasi & Optimalisasi</span></a>

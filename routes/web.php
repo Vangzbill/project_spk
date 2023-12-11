@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\KriteriadanBobotController;
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\DecisionMatrixController;
+use App\Http\Controllers\KriteriadanBobotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +21,7 @@ Route::get("/", [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::resources([
     'alternatif' => AlternatifController::class,
-    'kriteria_dan_bobot' => KriteriadanBobotController::class,
-    'decisionmatrix' => DecisionMatrixController::class,
+    'kriteria_dan_bobot'=> KriteriadanBobotController::class,
+    'decision_matrix'=> DecisionMatrixController::class,
 ]);
+
