@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            AlternatifSeeder::class,
+            KriteriadanBobotSeeder::class
+        ]);
         // \App\Models\User::factory(10)->create();
     }
 }
