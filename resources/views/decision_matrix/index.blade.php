@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="mytable" class="display nowrap table table-striped table-bordered">
+                            <table id="mytable" class="display nowrap table table-striped table-bordered" style="background-color:white">
                                 <thead>
                                     <tr>
                                         <th>No</th>

@@ -64,7 +64,7 @@ class NormalizationController extends Controller
         // Perhitungan total kuadrat untuk setiap kriteria
         foreach ($kriteria as $kriteria) {
             $totalKuadrat[$kriteria->id] = AlternatifdanSkorModel::where('kriteria_id', $kriteria->id)
-                ->sum(DB::raw('POWER(score, 2)'));
+                ->sum(DB::raw('POWER(skor, 2)'));
         }
 
         // Array untuk menyimpan akar kuadrat dari total kuadrat
