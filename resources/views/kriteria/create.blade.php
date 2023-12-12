@@ -21,11 +21,7 @@
                         <div class="breadcome-list">
                             <div class="row">
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="card-header border-0">
-                                        <div class="d-flex justify-content-between">
-                                            <h2 class="card-title" style="color: white">Kriteria dan Bobot</h2>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="card">
                                         <div class="card-body">
                                             @if ($errors->any())
@@ -81,20 +77,4 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-        $('#mytable').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-</script>
 @endsection

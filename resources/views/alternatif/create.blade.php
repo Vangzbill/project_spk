@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0" style="color: white">Tambah Alternatif</h1>
+                    <h1 class="m-0" style="color: white; margin-left:15px">Tambah Alternatif</h1>
                 </div>
                 <div class="col-sm-6"></div>
             </div>
@@ -21,11 +21,7 @@
                         <div class="breadcome-list">
                             <div class="row">
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="card-header border-0">
-                                        <div class="d-flex justify-content-between">
-                                            <h2 class="card-title" style="color: white">Kriteria dan Bobot</h2>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="card">
                                         <div class="card-body">
                                             @if ($errors->any())
