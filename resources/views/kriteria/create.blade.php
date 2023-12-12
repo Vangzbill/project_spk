@@ -31,7 +31,7 @@
                             @endif
                             <div class="card bg-info">
                                 <div class="card-body">
-                                    <form action="{{ route('kriteria_dan_bobot.store') }}" method="POST">
+                                    <form action="{{ route('kriteria.store') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label for="kode">Kode</label>

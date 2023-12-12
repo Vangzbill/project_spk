@@ -46,7 +46,6 @@
                                                     <th>Nama</th>
                                                     @foreach ($kriteria as $c)
                                                     <th>{{$c->kode}}</th>
-                                                    <th>{{$c->nama}}</th>
                                                     @endforeach
                                                     <th>Aksi</th>
                                                 </tr>
