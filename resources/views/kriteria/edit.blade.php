@@ -40,22 +40,22 @@
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="form-group">
-                                                    <label for="kode">Kode</label>
+                                                    <label for="kode" style="color: white">Kode</label>
                                                     <div class="input-group">
-                                                        <input id="kode" type="text" class="form-control" placeholder="Contoh: C1" name="kode" value="{{ $kriteria->kode }}" required>
+                                                        <input id="kode" type="text" class="form-control" placeholder="Contoh: C1" name="kode" value="{{ $kriteria->kode }}" style="border: 2px solid white" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="nama">Nama</label>
+                                                    <label for="nama" style="color: white>Nama</label>
                                                     <div class="input-group">
-                                                        <input id="nama" type="text" class="form-control" placeholder="Gaji" name="nama" value="{{ $kriteria->nama }}" required>
+                                                        <input id="nama" type="text" class="form-control" placeholder="Gaji" name="nama" value="{{ $kriteria->nama }}" style="border: 2px solid white" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="tipe">Tipe</label>
-                                                    <select class="form-control" id="tipe" name="tipe">
+                                                    <label for="tipe" style="color: white">Tipe</label>
+                                                    <select class="form-control" id="tipe" name="tipe" style="border: 2px solid white">
                                                         @if ($kriteria->tipe == "benefit")
-                                                        <option value="benefit" selected='selected'>Benefit</option>
+                                                        <option value="benefit" selected='selected' >Benefit</option>
                                                         <option value="cost">Cost</option>
                                                         @else
                                                         <option value="benefit">Benefit</option>
@@ -64,9 +64,9 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="bobot">Bobot</label>
+                                                    <label for="bobot" style="color: white">Bobot</label>
                                                     <div class="input-group">
-                                                        <input id="bobot" type="text" class="form-control" placeholder="Contoh: 0.15" name="bobot" value="{{ $kriteria->bobot }}" required>
+                                                        <input id="bobot" type="text" class="form-control" placeholder="Contoh: 0.15" name="bobot" value="{{ $kriteria->bobot }}" style="border: 2px solid white" required>
                                                     </div>
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Kirim</button>

@@ -40,21 +40,21 @@
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="form-group">
-                                                    <label for="kode">Kode</label>
+                                                    <label for="kode" style="color: whitesmoke">Kode</label>
                                                     <div class="input-group">
-                                                        <input id="kode" type="text" class="form-control" placeholder="Contoh: A1" name="nama" value="{{ $alternatif->kode }}" required>
+                                                        <input id="kode" type="text" class="form-control" placeholder="Contoh: A1" name="nama" value="{{ $alternatif->kode }}" style="border: 2px solid white" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="nama">Nama</label>
+                                                    <label for="nama" style="color: whitesmoke">Nama</label>
                                                     <div class="input-group">
-                                                        <input id="nama" type="text" class="form-control" placeholder="Somat S, Pd." name="nama" value="{{ $alternatif->nama }}" required>
+                                                        <input id="nama" type="text" class="form-control" placeholder="Somat S, Pd." name="nama" value="{{ $alternatif->nama }}" style="border: 2px solid white" required>
                                                     </div>
                                                 </div>
                                                 @foreach ($kriteria as $key => $k)
-                                                    <div class="form-group">
-                                                        <label for="skor[{{ $k->id }}]">{{ $k->nama }} - {{ $k->bobot }}</label>
-                                                        <select class="form-control" id="skor[{{ $k->id }}]" name="skor[{{ $k->id }}]">
+                                                    <div class="form-group" style="color: whitesmoke">
+                                                        <label for="skor[{{ $k->id }}]">{{ $k->nama }} - {{ $k->bobot }} </label>
+                                                        <select class="form-control" id="skor[{{ $k->id }}]" name="skor[{{ $k->id }}]" style="border: 2px solid white">
                                                             @for ($i = 1; $i <= 5; $i++)
                                                                 <option value="{{ $i }}" {{ isset($alternatifskor[$key]) && $i == $alternatifskor[$key]->skor ? 'selected' : '' }}>{{ $i }}</option>
                                                             @endfor
