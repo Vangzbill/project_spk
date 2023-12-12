@@ -27,7 +27,7 @@
                                 </ul>
                             </div>
                             @endif
-                            <form action="{{route('kriteria_dan_bobot.update', $kriteria->id)}}" method="POST">
+                            <form action="{{ route('kriteria.update', $kriteria->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
@@ -45,7 +45,7 @@
                                 <div class="form-group">
                                     <label for="tipe">Tipe</label>
                                     <select class="form-control" id="tipe" name="tipe">
-                                        @if ($kriteriabobot->type == "benefit")
+                                        @if ($kriteria->tipe == "benefit")
                                         <option value="benefit" selected='selected'>Benefit</option>
                                         <option value="cost">Cost</option>
                                         @else

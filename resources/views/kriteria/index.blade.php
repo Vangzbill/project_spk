@@ -35,7 +35,7 @@
                                                 </button>
                                             </div>
                                             @endif
-                                            <a href="{{route('kriteria_dan_bobot.create')}}" class='btn btn-primary'>
+                                            <a href="{{route('kriteria.create')}}" class='btn btn-primary'>
                                                 <span class='fa fa-plus'></span> Tambah Kriteria
                                             </a>
                                             <br>
@@ -59,11 +59,11 @@
                                                         <td>{{ $c->tipe}}</td>
                                                         <td>{{ $c->bobot}}</td>
                                                         <td>
-                                                            <form action="{{ route('kriteria_dan_bobot.destroy',$c->id) }}" method="POST">
+                                                            <form action="{{ route('kriteria.destroy',$c->id) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <span data-toggle="tooltip" data-placement="bottom" title="Edit Data">
-                                                                    <a href="{{ route('kriteria_dan_bobot.edit',$c->id) }}"
+                                                                    <a href="{{ route('kriteria.edit',$c->id) }}"
                                                                         class="btn btn-primary"><span class="fa fa-edit"></span>
                                                                     </a>
                                                                 </span>

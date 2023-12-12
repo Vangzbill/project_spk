@@ -17,7 +17,7 @@
                         <a class="mailbox" href="{{ url('/') }}" aria-expanded="false"><i class="icon nalika-home icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Dashboard</span></a>
                     </li>
                     <li>
-                        <a class="kriteria" href="{{ url('kriteria_dan_bobot') }}" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Kriteria & Bobot</span></a>
+                        <a class="kriteria" href="{{ url('kriteria') }}" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Kriteria & Bobot</span></a>
                     </li>
                     <li>
                         <a class="alt" href="{{ url('alternatif') }}" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Alternatif & Penilaian</span></a>
