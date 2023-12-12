@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="alert alert-info">
-                                            <h4><i class="icon fa fa-info"></i> Informasi</h4>
+                                            <h4><i class="fa fa-info"></i> Informasi</h4>
                                             <p>Sistem Pendukung Keputusan ini dibuat untuk memenuhi tugas mata kuliah Sistem Pendukung Keputusan.</p>
                                             <p>Anggota Kelompok :</p>
                                             <ul>
