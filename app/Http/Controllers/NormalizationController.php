@@ -97,34 +97,35 @@ class NormalizationController extends Controller
     {
         try {
             $optimizationResults = [];
-
+    
             // Iterate through each alternatif
             foreach ($normalizedScores as $alternatifId => $normalizedScoresPerAlternatif) {
                 // Initialize the total optimization for the current alternatif
                 $totalOptimization = 0;
-
+    
                 // Iterate through each kriteria
                 foreach ($normalizedScoresPerAlternatif as $kriteriaId => $normalizedScore) {
                     // Find the corresponding weight (bobot) for the current kriteria
-                    $bobot = $kriteria->where('id', $kriteriaId)->first()->bobot * 0.10;
-
+                    $kriteriaData = $kriteria->where('id', $kriteriaId)->first();
+                    $bobot = ($kriteriaData->tipe == 'cost') ? $kriteriaData->bobot * 0.10 * -1 : $kriteriaData->bobot * 0.10;
+    
                     // Ensure the kriteria ID is valid
                     if ($bobot !== null) {
                         // Calculate the optimization value for the current kriteria
                         $optimizationValue = $normalizedScore * $bobot;
-
+    
                         // Accumulate the optimization values for each kriteria
                         $totalOptimization += $optimizationValue;
-
+    
                         // Optionally, you can store the formatted optimization values in an array
                         $optimizationResults[$alternatifId][$kriteriaId] = number_format($optimizationValue, 2);
                     }
                 }
-
+    
                 // Store the total optimization value for the current alternatif
                 $optimizationResults[$alternatifId]['totalOptimization'] = number_format($totalOptimization, 2);
             }
-
+    
             return $optimizationResults;
         } catch (\Exception $e) {
             // Handle exception if needed
