@@ -16,7 +16,7 @@ class NormalizationController extends Controller
     {
         // Retrieve data or initialize as needed
         $this->skor = AlternatifdanSkorModel::select(
-            'alternatif_dan_skor.id as ids',
+            'alternatif_dan_skor.id as id',
             'alternatif.id as alternatif_id',
             'kriteria_dan_bobot.id as kriteria_id',
             'alternatif_dan_skor.skor as skor',
@@ -134,11 +134,21 @@ class NormalizationController extends Controller
 
     public function getSkor()
     {
-        return $this->skor;
+        try {
+            return $this->skor->toArray();
+        } catch (\Exception $e) {
+            // Handle exception if needed
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
     public function getKriteria()
     {
-        return $this->kriteria;
+        try {
+            return $this->kriteria->toArray();
+        } catch (\Exception $e) {
+            // Handle exception if needed
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

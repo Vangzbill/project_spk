@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\NormalizationController;
-
-use App\Models\AlternatifModel;
 use App\Models\KriteriadanBobotModel;
 
 class ValueController extends Controller
@@ -29,44 +27,43 @@ class ValueController extends Controller
     }
 
     private function computeFinalValues($optimizedResults, $kriteria)
-{
-    $finalValues = [
-        'benefit' => [],
-        'cost' => [],
-    ];
+    {
+        $finalValues = [
+            'benefit' => [],
+            'cost' => [],
+        ];
 
-    // Iterate through each alternatif
-    foreach ($optimizedResults as $alternatifId => $optimizationData) {
-        // Initialize the total for each type
-        $finalValueB = 0;
-        $finalValueC = 0;
+        // Iterate through each alternatif
+        foreach ($optimizedResults as $alternatifId => $optimizationData) {
+            // Initialize the total for each type
+            $finalValueB = 0;
+            $finalValueC = 0;
 
-        foreach ($optimizationData as $kriteriaId => $optimizationValue) {
-            if ($kriteriaId !== 'totalOptimization') {
-                // Retrieve kriteria data
-                $kriteriaData = $kriteria->where('id', $kriteriaId)->first();
+            foreach ($optimizationData as $kriteriaId => $optimizationValue) {
+                if ($kriteriaId !== 'totalOptimization') {
+                    // Retrieve kriteria data
+                    $kriteriaData = $kriteria->where('id', $kriteriaId)->first();
 
-                // Determine the type (benefit or cost)
-                $tipeKriteria = $kriteriaData->tipe;
+                    // Determine the type (benefit or cost)
+                    $tipeKriteria = $kriteriaData->tipe;
 
-                // For benefit criteria, add the optimization value directly
-                // For cost criteria, subtract the optimization value directly
-                if ($tipeKriteria == 'benefit') {
-                    $finalValueB += $optimizationValue;
-                } elseif ($tipeKriteria == 'cost') {
-                    $finalValueC += $optimizationValue;
+                    // For benefit criteria, add the optimization value directly
+                    // For cost criteria, subtract the optimization value directly
+                    if ($tipeKriteria == 'benefit') {
+                        $finalValueB += $optimizationValue;
+                    } elseif ($tipeKriteria == 'cost') {
+                        $finalValueC += $optimizationValue;
+                    }
                 }
             }
+
+            // Save the final values for the current alternatif
+            $finalValues['benefit'][$alternatifId] = number_format($finalValueB, 2);
+            $finalValues['cost'][$alternatifId] = number_format($finalValueC, 2);
         }
 
-        // Save the final values for the current alternatif
-        $finalValues['benefit'][$alternatifId] = number_format($finalValueB, 2);
-        $finalValues['cost'][$alternatifId] = number_format($finalValueC, 2);
+        return $finalValues;
     }
-
-    return $finalValues;
-}
-
 
     public function __invoke()
     {
