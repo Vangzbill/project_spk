@@ -21,15 +21,15 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
                                     <div class="card-header border-0">
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-flex justify-content-between" style="margin-bottom: 10px">
                                             <h2 class="card-title" style="color: white">Matriks Keputusan</h2>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <table id="mytable" class="display nowrap table table-striped table-bordered" style="background-color:white">
                                             <thead>
-                                                <tr>
-                                                    <th>No</th>
+                                                <tr style="background-color: #374f80; color:white;">
+                                                    <th>Alternatif</th>
                                                     @foreach ($kriteria as $k)
                                                         <th>{{ $k->kode }}</th>
                                                     @endforeach

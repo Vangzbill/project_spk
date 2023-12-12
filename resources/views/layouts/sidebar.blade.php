@@ -2,12 +2,12 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-            <strong><span>Kel. 6</span>
+            <strong style="font-size: 20px; margin-top:15px"><span>Kel. 6</span>
             </strong>
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
-                <a href="#"><img src="img/poltek.png" alt="" /></a>
+                <a href="#"><img src="{{ asset('img/poltek.png') }}" alt="" /></a>
                 <h2><span class="min-dtn">Kelompok 6</span></h2>
             </div>
         </div>

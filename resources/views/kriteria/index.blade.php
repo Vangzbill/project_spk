@@ -41,7 +41,7 @@
                                             <br>
                                             <table id="mytable" class="display nowrap table table-striped table-bordered" style="background-color: white">
                                                 <thead>
-                                                    <tr>
+                                                    <tr style="background-color: #374f80; color:white;">
                                                         <th>No</th>
                                                         <th>Kode</th>
                                                         <th>Nama</th>

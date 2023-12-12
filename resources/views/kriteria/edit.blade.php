@@ -20,8 +20,8 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
                                     <div class="card-header border-0">
-                                        <div class="d-flex justify-content-between">
-                                            <h2 class="card-title" style="color: white">Kriteria dan Bobot Edit</h2>
+                                        <div class="d-flex justify-content-between" style="margin-bottom: 30px">
+                                            <h2 class="card-title" style="color: white">Edit Kriteria dan Bobot</h2>
                                         </div>
                                     </div>
                                     <div class="card">
@@ -46,7 +46,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="nama" style="color: white>Nama</label>
+                                                    <label for="nama" style="color: white">Nama</label>
                                                     <div class="input-group">
                                                         <input id="nama" type="text" class="form-control" placeholder="Gaji" name="nama" value="{{ $kriteria->nama }}" style="border: 2px solid white" required>
                                                     </div>

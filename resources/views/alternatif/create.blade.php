@@ -1,7 +1,6 @@
 @extends('layouts.template')
 
 @section('content')
-<br><br><br>
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -21,7 +20,11 @@
                         <div class="breadcome-list">
                             <div class="row">
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
-                                    
+                                    <div class="card-header border-0">
+                                        <div class="d-flex justify-content-between" style="margin-bottom: 30px">
+                                            <h2 class="card-title" style="color: white">Tambah Alternatif</h2>
+                                        </div>
+                                    </div>
                                     <div class="card">
                                         <div class="card-body">
                                             @if ($errors->any())
@@ -48,7 +51,16 @@
                                                         <input id="nama" type="text" class="form-control" placeholder="Somat S, Pd." name="nama" style="border: 2px solid white" required>
                                                     </div>
                                                 </div>
-                                                
+                                                @foreach ($kriteria as $key => $k)
+                                                    <div class="form-group" style="color: whitesmoke">
+                                                        <label for="skor[{{ $k->id }}]">{{ $k->nama }} - {{ $k->bobot }} </label>
+                                                        <select class="form-control" id="skor[{{ $k->id }}]" name="skor[{{ $k->id }}]" style="border: 2px solid white">
+                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                <option value="{{ $i }}" {{ isset($alternatifskor[$key]) && $i == $alternatifskor[$key]->skor ? 'selected' : '' }}>{{ $i }}</option>
+                                                            @endfor
+                                                        </select>
+                                                    </div>
+                                                @endforeach
                                                 <button type="submit" class="btn btn-primary">Kirim</button>
                                             </form>
                                         </div>
