@@ -1,11 +1,13 @@
 @extends('layouts.template')
+
 @section('content')
+<br><br><br>
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Alternatif</h1>
+                    <h1 class="m-0" style="color: white">Tambah Alternatif</h1>
                 </div>
                 <div class="col-sm-6"></div>
             </div>
@@ -30,15 +32,15 @@
                             <form action="{{route('alternatif.store')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="kode">Kode</label>
+                                    <label for="kode" style="color: white">Kode</label>
                                     <div class="input-group">
-                                        <input id="kode" type="text" class="form-control" placeholder="Contoh: C1" name="kode" required>
+                                        <input id="kode" type="text" class="form-control" placeholder="Contoh: C1" name="kode" style="border: 2px solid white" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama">Nama</label>
+                                    <label for="nama" style="color: white">Nama</label>
                                     <div class="input-group">
-                                        <input id="nama" type="text" class="form-control" placeholder="Somat S, Pd." name="nama" required>
+                                        <input id="nama" type="text" class="form-control" placeholder="Somat S, Pd." name="nama" style="border: 2px solid white" required>
                                     </div>
                                 </div>
                                 

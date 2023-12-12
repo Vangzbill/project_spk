@@ -2,11 +2,12 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-            <strong><img src="img/poltek.png" alt="" /></strong>
+            <strong><span>Kel. 6</span>
+            </strong>
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
-                <a href="#"><img src="img/notification/4.jpg" alt="" /></a>
+                <a href="#"><img src="img/poltek.png" alt="" /></a>
                 <h2><span class="min-dtn">Kelompok 6</span></h2>
             </div>
         </div>

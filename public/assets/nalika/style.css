@@ -831,15 +831,17 @@ ul.setting-panel-list li{
     top: -1px;
 }
 .form-control {
-    background-color: #FFFFFF;
+    background-color: #152036;
     background-image: none;
-    border: 1px solid #e5e6e7;
-    border-radius: 1px;
+    border: 3px solid white;
+    border-radius: 3px;
     color: inherit;
     display: block;
     padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 100%;
+    width: 190px;
+    height: 40px;
+    color: white;
 }
 .breadcome-heading a {
     position: absolute;
@@ -3629,7 +3631,7 @@ th.fc-day-header.fc-widget-header {
 	display:none;
 }
 .mini-navbar .profile-dtl img {
-    height: 50px;
+    height: 40px;
 }
 .fc tbody .fc-row .fc-content-skeleton tbody tr:last-child td {
    padding-bottom: 0px;
