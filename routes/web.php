@@ -24,7 +24,7 @@ Route::get("/", [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::resources([
     'alternatif' => AlternatifController::class,
-    'kriteria_dan_bobot'=> KriteriadanBobotController::class,
+    'kriteria'=> KriteriadanBobotController::class,
     'decision_matrix'=> DecisionMatrixController::class,
 ]);
 
@@ -33,3 +33,5 @@ Route::get("normalization", [NormalizationController::class,"index"])->name("nor
 Route::get("value", [ValueController::class,"index"])->name("value.index");
 
 Route::get('ranking', [RankingController::class, 'index'])->name('ranking.index');
+
+Route::put('kriteria/{id}', [KriteriadanBobotController::class, 'update'])->name('kriteria.update');

@@ -15,8 +15,9 @@ class KriteriadanBobotController extends Controller
     public function index()
     {
         $kriteria = KriteriadanBobotModel::get();
+        $id = KriteriadanBobotModel::pluck('id');
         // Contoh perubahan di metode index()
-        return view('kriteria_dan_bobot.index', compact('kriteria'))->with('i', 0);
+        return view('kriteria.index', compact('kriteria'))->with('i', 0);
     }
 
     /**
@@ -26,7 +27,7 @@ class KriteriadanBobotController extends Controller
      */
     public function create()
     {
-        return view('kriteria_dan_bobot.create');
+        return view('kriteria.create');
     }
 
     /**
@@ -46,7 +47,7 @@ class KriteriadanBobotController extends Controller
 
         KriteriadanBobotModel::create($request->all());
 
-        return redirect()->route('kriteria_dan_bobot.index')
+        return redirect()->route('kriteria.index')
                         ->with('success','Criteria created successfully.');
     }
 
@@ -67,9 +68,10 @@ class KriteriadanBobotController extends Controller
      * @param  \App\Models\KriteriadanBobotModel  $kriteriabobot
      * @return \Illuminate\Http\Response
      */
-    public function edit(KriteriadanBobotModel $kriteria)
+    public function edit($id)
     {
-        return view('kriteria_dan_bobot.edit',compact('kriteria'));
+        $kriteria = KriteriadanBobotModel::find($id);
+        return view('kriteria.edit',compact('kriteria'));
     }
 
     /**
@@ -82,7 +84,7 @@ class KriteriadanBobotController extends Controller
     public function update(Request $request, KriteriadanBobotModel $kriteria)
     {
         $request->validate([
-            'kode'=> 'required',
+            'kode' => 'required',
             'nama' => 'required',
             'tipe' => 'required',
             'bobot' => 'required',
@@ -90,9 +92,10 @@ class KriteriadanBobotController extends Controller
 
         $kriteria->update($request->all());
 
-        return redirect()->route('kriteria_dan_bobot.index')
-                        ->with('success','Criteria updated successfully');
+        return redirect()->route('kriteria.index')
+                        ->with('success', 'Criteria updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -100,11 +103,11 @@ class KriteriadanBobotController extends Controller
      * @param  \App\Models\KriteriadanBobotModel  $kriteriabobot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KriteriadanBobotModel $kriteriabobot)
+    public function destroy(KriteriadanBobotModel $kriteria)
     {
-        $kriteriabobot->delete();
+        $kriteria->delete();
 
-        return redirect()->route('kriteria_dan_bobot.index')
+        return redirect()->route('kriteria.index')
                         ->with('success','Criteria deleted successfully');
     }
 }
