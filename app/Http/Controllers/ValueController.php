@@ -1,3 +1,5 @@
+<?php
+
 namespace App\Http\Controllers;
 
 use App\Models\AlternatifModel;
@@ -10,10 +12,11 @@ class ValueController extends Controller
         try {
             // Retrieve data from the NormalizationController
             $normalizationController = new NormalizationController();
-            $optimizedResults = $normalizationController->optimizedMoora();
+            $normalizedScores = $normalizationController->normalisasiMoora($normalizationController->getSkor(), $normalizationController->getKriteria());
+            $optimizedResults = $normalizationController->optimizedMoora($normalizedScores, $normalizationController->getKriteria());
 
             // Compute final values (both cost and benefit)
-            $finalValues = $this->computeFinalValues($optimizedResults);
+            $finalValues = $this->computeFinalValues($optimizedResults, $normalizationController->getKriteria());
 
             // Display the values
             return view('value.index', compact('finalValues'))->with('i', 0);
@@ -23,7 +26,7 @@ class ValueController extends Controller
         }
     }
 
-    private function computeFinalValues($optimizedResults)
+    private function computeFinalValues($optimizedResults, $kriteria)
     {
         $finalValues = [
             'benefit' => [],
@@ -38,8 +41,11 @@ class ValueController extends Controller
 
             foreach ($optimizationData as $kriteriaId => $optimizationValue) {
                 if ($kriteriaId !== 'totalOptimization') {
+                    // Retrieve kriteria data
+                    $kriteriaData = $kriteria->find($kriteriaId);
+
                     // Determine the type (benefit or cost)
-                    $tipeKriteria = $kriteriabobot->where('id', $kriteriaId)->first()->tipe;
+                    $tipeKriteria = $kriteriaData->tipe;
 
                     // For benefit criteria, add the optimization value directly
                     // For cost criteria, subtract the optimization value directly
@@ -58,5 +64,9 @@ class ValueController extends Controller
 
         return $finalValues;
     }
-    
+
+    public function __invoke()
+    {
+        return $this->index();
+    }
 }

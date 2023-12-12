@@ -26,13 +26,13 @@
                         <a class="matriks" href="{{ url('decision_matrix') }}" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Matriks Keputusan</span></a>
                     </li>
                     <li>
-                        <a class="normalisasi" href="{{ url('normalisasi_dan_optimalisasi') }}" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Normalisasi & Optimalisasi</span></a>
+                        <a class="normalisasi" href="{{ url('normalization') }}" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Normalisasi & Optimalisasi</span></a>
                     </li>
                     <li>
                         <a class="value" href="{{ url('value') }}" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Value</span></a>
                     </li>
                     <li>
-                        <a class="rank" href="{{ url('rank') }}" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Ranking</span></a>
+                        <a class="rank" href="{{ url('ranking') }}" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non" style="font-size: 13px">Ranking</span></a>
                     </li>
                 </ul>
             </nav>

@@ -9,28 +9,39 @@ use Illuminate\Support\Facades\DB;
 
 class NormalizationController extends Controller
 {
+    private $skor;
+    private $kriteria;
+
+    public function __construct()
+    {
+        // Retrieve data or initialize as needed
+        $this->skor = AlternatifdanSkorModel::select(
+            'alternatif_dan_skor.id as ids',
+            'alternatif.id as alternatif_id',
+            'kriteria_dan_bobot.id as kriteria_id',
+            'alternatif_dan_skor.skor as skor',
+            'alternatif.kode as alternatif_kode',
+            'alternatif.nama as alternatif_nama',
+            'kriteria_dan_bobot.kode as kriteria_kode',
+            'kriteria_dan_bobot.nama as kriteria_nama',
+            'kriteria_dan_bobot.tipe as tipe',
+            'kriteria_dan_bobot.bobot as bobot',
+        )
+            ->leftJoin('alternatif', 'alternatif.id', '=', 'alternatif_dan_skor.alternatif_id')
+            ->leftJoin('kriteria_dan_bobot', 'kriteria_dan_bobot.id', '=', 'alternatif_dan_skor.kriteria_id')
+            ->get();
+
+        $this->kriteria = KriteriadanBobotModel::get();
+    }
+
     public function index()
     {
         try {
             // Mengambil semua skor alternatif beserta informasi terkait
-            $skor = AlternatifdanSkorModel::select(
-                'alternatif_dan_skor.id as ids',
-                'alternatif.id as alternatif_id',
-                'kriteria_dan_bobot.id as kriteria_id',
-                'alternatif_dan_skor.skor as skor',
-                'alternatif.kode as alternatif_kode',
-                'alternatif.nama as alternatif_nama',
-                'kriteria_dan_bobot.kode as kriteria_kode',
-                'kriteria_dan_bobot.nama as kriteria_nama',
-                'kriteria_dan_bobot.tipe as tipe',
-                'kriteria_dan_bobot.bobot as bobot',
-            )
-                ->leftJoin('alternatif', 'alternatif.id', '=', 'alternatif_dan_skor.alternatif_id')
-                ->leftJoin('kriteria_dan_bobot', 'kriteria_dan_bobot.id', '=', 'alternatif_dan_skor.kriteria_id')
-                ->get();
+            $skor = $this->skor;
 
             // Mengambil semua kriteria bobot
-            $kriteria = KriteriadanBobotModel::get();
+            $kriteria = $this->kriteria;
 
             // Memanggil fungsi untuk normalisasi Moora
             $normalizedScores = $this->normalisasiMoora($skor, $kriteria);
@@ -115,5 +126,15 @@ class NormalizationController extends Controller
             // Handle exception if needed
             return response()->json(['error' => $e->getMessage()], 500);
         }
+    }
+
+    public function getSkor()
+    {
+        return $this->skor;
+    }
+
+    public function getKriteria()
+    {
+        return $this->kriteria;
     }
 }

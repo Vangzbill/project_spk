@@ -5,7 +5,8 @@ use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\DecisionMatrixController;
 use App\Http\Controllers\KriteriadanBobotController;
 use App\Http\Controllers\NormalizationController;
-use App\Http\Controllers\ValueController;
+use App\Http\Controllers\ValueController; // Add this line
+use App\Http\Controllers\RankingController; // Add this line
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,7 @@ Route::resources([
 ]);
 
 Route::get("normalization", [NormalizationController::class,"index"])->name("normalization.index");
+
 Route::get("value", [ValueController::class,"index"])->name("value.index");
+
+Route::get('ranking', [RankingController::class, 'index'])->name('ranking.index');
