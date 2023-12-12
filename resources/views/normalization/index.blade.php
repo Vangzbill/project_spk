@@ -16,7 +16,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body">    
+                            <h2 class="m-0" style="color: white">Normalisasi</h2>
                             <table id="mytable" class="display nowrap table table-striped table-bordered" style="background-color:white">
                                 <thead>
                                     <tr>
@@ -49,7 +50,8 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="mytable" class="display nowrap table table-striped table-bordered">
+                            <h2 class="m-0" style="color: white">Optimasi</h2>
+                            <table id="mytable" class="display nowrap table table-striped table-bordered" style="background-color:white">
                                 <thead>
                                     <tr>
                                       

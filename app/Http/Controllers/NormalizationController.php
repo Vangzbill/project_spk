@@ -43,20 +43,24 @@ class NormalizationController extends Controller
             // Mengambil semua kriteria bobot
             $kriteria = $this->kriteria;
 
+            // Mendapatkan data alternatif
+            $alternatif = AlternatifModel::all();  // Ganti ini sesuai dengan model dan query yang sesuai di aplikasi Anda
+
             // Memanggil fungsi untuk normalisasi Moora
             $normalizedScores = $this->normalisasiMoora($skor, $kriteria);
 
             $optimizationResults = $this->optimizedMoora($normalizedScores, $kriteria);
 
-            return view('normalization.index', compact('skor', 'kriteria', 'normalizedScores', 'optimizationResults'))->with('i', 0);
+            return view('normalization.index', compact('skor', 'kriteria', 'alternatif', 'normalizedScores', 'optimizationResults'))->with('i', 0);
         } catch (\Exception $e) {
             // Handle exception
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
+
     // Fungsi untuk normalisasi Moora
-    private function normalisasiMoora(&$skor, $kriteria)
+    public function normalisasiMoora(&$skor, $kriteria)
     {
         // Array untuk menyimpan total kuadrat setiap kriteria
         $totalKuadrat = [];

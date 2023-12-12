@@ -15,15 +15,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
-                                @foreach ($hitungNilaiAkhir['benefit'] as $alternatifId => $benefitValue)
-                                    {{-- @if(@isset($alternatif[$alternatifId])) --}}
-                                        <tr>
-                                            <td>{{ $alternatif->where('id', $alternatifId)->first->kode['kode'] }}</td>
-                                            <td>{{ $benefitValue }}</td>
-                                        </tr>
-                                    {{-- @endisset --}}
-
+                                @foreach ($finalValues['benefit'] as $alternatifId => $benefitValue)
+                                    <tr>
+                                        <td>{{ $alternatifId }}</td>
+                                        <td>{{ $benefitValue }}</td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -38,13 +34,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($hitungNilaiAkhir['cost'] as $alternatifId => $costValue)
-                                    {{-- @if (isset($alternatif[$alternatifId])) --}}
-                                        <tr>
-                                            <td>{{ $alternatif->where('id', $alternatifId)->first->kode['kode'] }}</td>
-                                            <td>{{ $costValue }}</td>
-                                        </tr>
-                                    {{-- @endif --}}
+                                @foreach ($finalValues['cost'] as $alternatifId => $costValue)
+                                    <tr>
+                                        <td>{{ $alternatifId }}</td>
+                                        <td>{{ $costValue }}</td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -54,9 +48,8 @@
         </div>
     </div>
 </div>
-
-</div>
 @endsection
+
 @section('script')
 <script>
 $(function () {
