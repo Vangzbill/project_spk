@@ -106,7 +106,7 @@ class NormalizationController extends Controller
                 // Iterate through each kriteria
                 foreach ($normalizedScoresPerAlternatif as $kriteriaId => $normalizedScore) {
                     // Find the corresponding weight (bobot) for the current kriteria
-                    $bobot = $kriteria->where('id', $kriteriaId)->first()->bobot;
+                    $bobot = $kriteria->where('id', $kriteriaId)->first()->bobot * 0.10;
 
                     // Ensure the kriteria ID is valid
                     if ($bobot !== null) {
