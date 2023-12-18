@@ -28,12 +28,12 @@
                                             <p>Sistem Pendukung Keputusan ini dibuat untuk memenuhi tugas mata kuliah Sistem Pendukung Keputusan.</p>
                                             <p>Anggota Kelompok :</p>
                                             <ul>
-                                                <li>Afif Lukmanul H</li>
-                                                <li>Sabilla Luthfi Rahmadhan</li>
-                                                <li>Taufiqy Firdaus J</li>
+                                                <li>1. Afif Lukmanul H          (2141720262)</li>
+                                                <li>2. Sabilla Luthfi Rahmadhan (2141720122)</li>
+                                                <li>3. Taufiqy Firdaus J        (2141720124)</li>
                                             </ul>
                                         </div>
-                                        <h5 style="color: white">Sistem ini dapat membantu seseorang untuk mengambil keputusan dengan menggunakan Metode MOORA.</h6>
+                                        <h5 style="color: white">Sistem ini dapat membantu proses pengambilan keputusan dengan menggunakan Metode MOORA.</h6>
                                         <br> <p style="color: white">Cara Penggunaan:</p>
                                         <ol style="color: white">
                                             <li>Masuk ke menu "Kriteria & Bobot" untuk menambahkan kriteria beserta bobotnya.</li>

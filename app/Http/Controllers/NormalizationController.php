@@ -179,7 +179,7 @@ public function hitungYi($hitungNilaiAkhir)
         // Pastikan bahwa ID alternatif ada dalam array cost
         if (isset($hitungNilaiAkhir['cost'][$alternatifId])) {
             // Hitung nilai Yi (benefit - cost)
-            $yiValue = $benefitValue - $hitungNilaiAkhir['cost'][$alternatifId];
+            $yiValue = $benefitValue + $hitungNilaiAkhir['cost'][$alternatifId];
 
             // Simpan nilai Yi untuk alternatif saat ini
             $hitungYi[$alternatifId]['yiValue'] = number_format($yiValue, 2);

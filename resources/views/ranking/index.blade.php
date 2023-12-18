@@ -5,7 +5,9 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-               
+                <div class="col-sm-6">
+                    <h1 class="m-0">Ranking</h1>
+                </div>
                 <div class="col-sm-6"></div>
             </div>
         </div>
@@ -19,7 +21,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
                                     <div class="card-header border-0">
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-flex justify-content-between" style="margin-bottom: 25px">
                                             <h2 class="card-title" style="color: white">Perangkingan</h2>
                                         </div>
                                     </div>
@@ -28,8 +30,9 @@
                                             
                                             <table id="rankingTable" class="display nowrap table table-striped table-bordered" style="background-color: white">
                                                 <thead>
-                                                    <tr>
+                                                    <tr style="background-color: #374f80; color:white;">
                                                         <th>Ranking</th>
+                                                        <th>Kode</th>
                                                         <th>Alternatif</th>
                                                         <th>Value</th>
                                                     </tr>
@@ -38,6 +41,7 @@
                                                     @foreach ($hitungYi as $alternatifId => $alternatifData)
                                                         <tr>
                                                             <td>{{ $alternatifData['ranking'] }}</td>
+                                                            <td>{{ $alternatif->where('id', $alternatifId)->first->kode['kode'] }}</td>
                                                             <td>{{ $alternatif->where('id', $alternatifId)->first->nama['nama'] }}</td>
                                                             <td>
                                                                 @if (isset($alternatifData['yiValue']))
@@ -62,6 +66,18 @@
 @endsection
 
 @section('script')
+<style>
+    /* Ganti warna font pada lengthMenu menjadi putih */
+    .dataTables_length,
+    .dataTables_length label {
+        color: white;
+    }
+    /* Ganti warna font pada elemen searching menjadi putih */
+    .dataTables_filter label,
+    .dataTables_filter input {
+        color: white;
+    }
+</style>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     var rankingTable = document.getElementById("rankingTable");
