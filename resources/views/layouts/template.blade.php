@@ -13,6 +13,8 @@
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('assets/nalika/css/bootstrap.min.css') }}">
@@ -81,6 +83,7 @@
 
     @include('layouts.footer')
 
+    @yield('script')
     <!-- jquery
 		============================================ -->
     <script src="{{ asset('assets/nalika/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -134,6 +137,7 @@
     <!-- main JS
 		============================================ -->
     <script src="{{ asset('assets/nalika/js/main.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>

@@ -20,20 +20,18 @@
                                 <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
                                     <div class="card-header border-0">
                                         <div class="d-flex justify-content-between">
-                                            <h2 class="card-title" style="color: white">Normalisasi</h2>
+                                            <h2 class="card-title" style="color: white">Perangkingan</h2>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
                                             
-                                                <h2 class="m-0">Perankingan</h2>
-                                            
-                                            <table id="rankingTable" class="display nowrap table table-striped table-bordered">
+                                            <table id="rankingTable" class="display nowrap table table-striped table-bordered" style="background-color: white">
                                                 <thead>
                                                     <tr>
                                                         <th>Ranking</th>
                                                         <th>Alternatif</th>
-                                                        <th>Yi Value</th>
+                                                        <th>Value</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -65,17 +63,29 @@
 
 @section('script')
 <script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-        $('#rankingTable').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+    document.addEventListener("DOMContentLoaded", function() {
+    var rankingTable = document.getElementById("rankingTable");
+    
+    if (rankingTable) {
+        // Initialize DataTable
+        var dataTable = new DataTable(rankingTable, {
+            responsive: true,
+            lengthChange: true,
+            lengthMenu: [5, 10, 20, 50, 100],
+            pageLength: 20,
+            autoWidth: false,
+            searching: true,
         });
-    });
+
+        // Add DataTable buttons
+        var buttonsContainer = document.createElement("div");
+        buttonsContainer.className = "dt-buttons-container";
+
+        // var buttons = dataTable.buttons();
+        // buttons.container().appendTo(buttonsContainer);
+        rankingTable.parentNode.insertBefore(buttonsContainer, rankingTable.nextSibling);
+    }
+});
+
 </script>
 @endsection
