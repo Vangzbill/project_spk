@@ -81,8 +81,10 @@ class KriteriadanBobotController extends Controller
      * @param  \App\Models\KriteriadanBobotModel  $kriteriabobot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, KriteriadanBobotModel $kriteria)
+    public function update(Request $request, $id)
     {
+        $kriteria = KriteriadanBobotModel::findOrFail($id);
+
         $request->validate([
             'kode' => 'required',
             'nama' => 'required',
@@ -92,9 +94,9 @@ class KriteriadanBobotController extends Controller
 
         $kriteria->update($request->all());
 
-        return redirect()->route('kriteria.index')
-                        ->with('success', 'Criteria updated successfully');
+        return redirect()->route('kriteria.index')->with('success', 'Criteria updated successfully');
     }
+
 
 
     /**
@@ -103,11 +105,12 @@ class KriteriadanBobotController extends Controller
      * @param  \App\Models\KriteriadanBobotModel  $kriteriabobot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KriteriadanBobotModel $kriteria)
+    public function destroy($id)
     {
+        $kriteria = KriteriadanBobotModel::findOrFail($id);
         $kriteria->delete();
 
-        return redirect()->route('kriteria.index')
-                        ->with('success','Criteria deleted successfully');
+        return redirect()->route('kriteria.index')->with('success', 'Criteria deleted successfully');
     }
+
 }

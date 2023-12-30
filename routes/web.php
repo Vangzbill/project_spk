@@ -31,3 +31,7 @@ Route::get("normalization", [NormalizationController::class,"index"])->name("nor
 Route::get('ranking', [NormalizationController::class, "showRanking"])->name('ranking.index');
 
 Route::put('kriteria/{id}', [KriteriadanBobotController::class, 'update'])->name('kriteria.update');
+
+Route::middleware(['web'])->group(function () {
+    Route::delete('kriteria/{kriteria}', [KriteriadanBobotController::class, 'destroy'])->name('kriteria.destroy');
+});
