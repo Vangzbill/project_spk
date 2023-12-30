@@ -55,32 +55,31 @@ class AlternatifController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // Controller Method
     public function store(Request $request)
-{
-    $request->validate([
-        'kode'=> 'required',
-        'nama' => 'required'
-    ]);
+        {
+            $request->validate([
+                'kode' => 'required',
+                'nama' => 'required',
+                'skor' => 'required|array',
+            ]);
 
-    // Menyimpan alternatif
-    $alt = new AlternatifModel;
-    $alt->kode = $request->kode;
-    $alt->nama = $request->nama;
-    $alt->save();
+            $alt = new AlternatifModel;
+            $alt->kode = $request->kode;
+            $alt->nama = $request->nama;
+            $alt->save();
 
-    // Menyimpan skor
-    $kriteria = KriteriadanBobotModel::get();
-    foreach ($kriteria as $k) {
-        $skor = new AlternatifdanSkorModel();
-        $skor->alternatif_id = $alt->id;
-        $skor->kriteria_id = $k->id;
-        $skor->skor = 0; // Set a default value, change as needed
-        $skor->save();
-    }
+            foreach ($request->skor as $kriteria_id => $skor) {
+                $skorModel = new AlternatifdanSkorModel();
+                $skorModel->alternatif_id = $alt->id;
+                $skorModel->kriteria_id = $kriteria_id;
+                $skorModel->skor = $skor;
+                $skorModel->save();
+            }
 
-    return redirect()->route('alternatif.index')
-                    ->with('success', 'Alternatif created successfully.');
-}
+            return redirect()->route('alternatif.index')->with('success', 'Alternatif created successfully.');
+        }
+
 
 
     /**

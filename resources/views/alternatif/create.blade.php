@@ -55,6 +55,7 @@
                                                     <div class="form-group" style="color: whitesmoke">
                                                         <label for="skor[{{ $k->id }}]">{{ $k->nama }} - {{ $k->bobot }} </label>
                                                         <select class="form-control" id="skor[{{ $k->id }}]" name="skor[{{ $k->id }}]" style="border: 2px solid white">
+                                                            
                                                             @for ($i = 1; $i <= 5; $i++)
                                                                 <option value="{{ $i }}" {{ isset($alternatifskor[$key]) && $i == $alternatifskor[$key]->skor ? 'selected' : '' }}>{{ $i }}</option>
                                                             @endfor
